@@ -155,7 +155,7 @@ array_push(
     <link rel="stylesheet" media="screen, print" href="css/fa-regular.css">
 </head>
 
-<body class="mod-bg-1 mod-nav-link ">
+<body class="mod-bg-1 mod-nav-link">
     <main id="js-page-content" role="main" class="page-content">
         <div class="row">
             <div class="col-xl-12">

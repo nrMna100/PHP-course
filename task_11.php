@@ -1,3 +1,5 @@
+<? session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +23,6 @@
 
 <body class="mod-bg-1 mod-nav-link ">
     <main id="js-page-content" role="main" class="page-content">
-
         <div class="col-md-6">
             <div id="panel-1" class="panel">
                 <div class="panel-hdr">
@@ -37,7 +38,15 @@
                     <div class="panel-content">
                         <div class="panel-content">
                             <div class="form-group">
-                                <form action="handler_10.php" method="post">
+                                <? if ($_SESSION["show_message"]) : ?>
+                                    <div class="alert alert-danger fade show" role="alert">
+                                        You should check in on some of those fields below.
+                                    </div>
+                                <?
+                                    $_SESSION["show_message"] = false;
+                                endif;
+                                ?>
+                                <form action="handler_11.php" method="post">
                                     <label class="form-label" for="simpleinput">Text</label>
                                     <input type="text" id="simpleinput" class="form-control" name="text">
                                     <button class="btn btn-success mt-3">Submit</button>
@@ -49,6 +58,7 @@
             </div>
         </div>
     </main>
+
 
     <script src="js/vendors.bundle.js"></script>
     <script src="js/app.bundle.js"></script>

@@ -1,3 +1,5 @@
+<? session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,9 +39,19 @@
                     <div class="panel-content">
                         <div class="panel-content">
                             <div class="form-group">
-                                <form action="handler_10.php" method="post">
+                                <?
+                                if (isset($_SESSION["message"])) : ?>
+                                    <div class="alert alert-info"><?= $_SESSION["message"]; ?></div>
+                                <?
+                                    session_destroy();
+                                    var_dump($_SESSION);
+                                    $_SESSION["423"] = "423";
+                                    var_dump($_SESSION["423"]);
+                                endif;
+                                ?>
+                                <form action="handler_13.php" method="post">
                                     <label class="form-label" for="simpleinput">Text</label>
-                                    <input type="text" id="simpleinput" class="form-control" name="text">
+                                    <input type="text" name="text" id="simpleinput" class="form-control">
                                     <button class="btn btn-success mt-3">Submit</button>
                                 </form>
                             </div>
@@ -49,6 +61,7 @@
             </div>
         </div>
     </main>
+
 
     <script src="js/vendors.bundle.js"></script>
     <script src="js/app.bundle.js"></script>
