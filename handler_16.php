@@ -1,9 +1,8 @@
 <?
 session_start();
 
-$textVal = $_POST["text"];
-
-$_SESSION["message"] = $textVal;
+if (isset($_SESSION["user_data"]))
+    unset($_SESSION["user_data"]);
 
 if (!empty($_SERVER['HTTP_REFERER']))
     header("Location: " . $_SERVER['HTTP_REFERER']);

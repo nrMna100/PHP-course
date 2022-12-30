@@ -23,7 +23,6 @@
 
 <body class="mod-bg-1 mod-nav-link ">
     <main id="js-page-content" role="main" class="page-content">
-
         <div class="col-md-6">
             <div id="panel-1" class="panel">
                 <div class="panel-hdr">
@@ -39,16 +38,18 @@
                     <div class="panel-content">
                         <div class="panel-content">
                             <div class="form-group">
-                                <? if (!empty($_SESSION["message"])) : ?>
-                                    <div class="alert alert-info"><?= $_SESSION["message"]; ?></div>
-                                <?
-                                    unset($_SESSION["message"]);
-                                endif;
-                                ?>
-                                <form action="handler_13.php" method="post">
-                                    <label class="form-label" for="simpleinput">Text</label>
-                                    <input type="text" name="text" id="simpleinput" class="form-control">
-                                    <button class="btn btn-success mt-3">Submit</button>
+                                <div class="alert alert-info fade show" role="alert">
+                                    Кнопка была нажата:
+                                    <b>
+                                        <?= (int) $_SESSION["click_amount"]; ?>
+                                    </b>
+                                    раз
+                                </div>
+                                <form action="handler_increase_14.php" method="post">
+                                    <button class="btn btn-success mt-3">Increase</button>
+                                </form>
+                                <form action="handler_reset_14.php" method="post">
+                                    <button class="btn btn-danger mt-3">Reset</button>
                                 </form>
                             </div>
                         </div>

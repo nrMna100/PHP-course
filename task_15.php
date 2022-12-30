@@ -23,7 +23,6 @@
 
 <body class="mod-bg-1 mod-nav-link ">
     <main id="js-page-content" role="main" class="page-content">
-
         <div class="col-md-6">
             <div id="panel-1" class="panel">
                 <div class="panel-hdr">
@@ -39,15 +38,22 @@
                     <div class="panel-content">
                         <div class="panel-content">
                             <div class="form-group">
-                                <? if (!empty($_SESSION["message"])) : ?>
-                                    <div class="alert alert-info"><?= $_SESSION["message"]; ?></div>
+                                <? if (isset($_SESSION["error"])) : ?>
+                                    <div class="alert alert-danger fade show" role="alert">
+                                        <?= $_SESSION["error"]; ?>
+                                    </div>
                                 <?
-                                    unset($_SESSION["message"]);
+                                    unset($_SESSION["error"]);
                                 endif;
                                 ?>
-                                <form action="handler_13.php" method="post">
-                                    <label class="form-label" for="simpleinput">Text</label>
-                                    <input type="text" name="text" id="simpleinput" class="form-control">
+                                <form action="handler_15.php" method="post">
+                                    <div class="form-group">
+                                        <label class="form-label" for="simpleinput">Email</label>
+                                        <input type="text" id="simpleinput" name="email" class="form-control">
+                                    </div>
+
+                                    <label class="form-label" for="simpleinput">Password</label>
+                                    <input type="password" id="simpleinput" class="form-control" name="password">
                                     <button class="btn btn-success mt-3">Submit</button>
                                 </form>
                             </div>

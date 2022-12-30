@@ -23,7 +23,6 @@
 
 <body class="mod-bg-1 mod-nav-link ">
     <main id="js-page-content" role="main" class="page-content">
-
         <div class="col-md-6">
             <div id="panel-1" class="panel">
                 <div class="panel-hdr">
@@ -38,19 +37,14 @@
                 <div class="panel-container show">
                     <div class="panel-content">
                         <div class="panel-content">
-                            <div class="form-group">
-                                <? if (!empty($_SESSION["message"])) : ?>
-                                    <div class="alert alert-info"><?= $_SESSION["message"]; ?></div>
-                                <?
-                                    unset($_SESSION["message"]);
-                                endif;
-                                ?>
-                                <form action="handler_13.php" method="post">
-                                    <label class="form-label" for="simpleinput">Text</label>
-                                    <input type="text" name="text" id="simpleinput" class="form-control">
-                                    <button class="btn btn-success mt-3">Submit</button>
-                                </form>
-                            </div>
+                            <form action="handler_16.php" method="post">
+                                <div class="form-group">
+                                    <div class="alert alert-success fade show" role="alert">
+                                        Здравствуйте, ИМЯ_ПОЛЬЗОВАТЕЛЯ.
+                                    </div>
+                                    <button class="btn btn-info">Выйти</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

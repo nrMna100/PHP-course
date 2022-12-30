@@ -1,9 +1,7 @@
 <?
 session_start();
 
-$textVal = $_POST["text"];
-
-$_SESSION["message"] = $textVal;
+$_SESSION["click_amount"]++;
 
 if (!empty($_SERVER['HTTP_REFERER']))
     header("Location: " . $_SERVER['HTTP_REFERER']);
