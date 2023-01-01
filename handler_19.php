@@ -19,6 +19,7 @@ function is_image($file)
 
 function return_only_images($file)
 {
+
     $sorted_files = array();
     foreach ($file as $k => $l) {
         foreach ($l as $i => $v) {
